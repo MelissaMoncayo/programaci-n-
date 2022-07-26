@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jul  7 11:48:17 2022
+
+@author: lab
+"""
+
+A=int(input("ingrese el número de filas: "))
+B=int(input("ingrese el número de columnas: "))
+C=[]
+acum=0
+for i in range (A):
+    C.append([])
+for i in range(A):
+    for j in range(B):
+        valor=int(input("fila {},columna{}: ".format(i+1,j+1) ))
+        acum=acum+valor
+        C[i].append(valor)
+
+ 
+#imprimir en forma de matriz
+print()
+for fila in C:
+    print("[",end=" ") #"imprime el corchete inicial"
+    for elemento in fila:
+        print("{}".format(elemento), end=" ")
+    print("]")   #"imprime el corchete final"
+print()
+print(acum)

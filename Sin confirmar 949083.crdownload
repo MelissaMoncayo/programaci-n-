@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jul  7 11:51:56 2022
+
+@author: lab
+"""
+
+A=[[1,2,3],[4,5,6],[8,5,9],[1,8,7]]
+acum=0
+for i in range(len(A)):
+    for j in range(len(A[i])):
+        acum=acum+A[i][j]
+print(acum)
+    

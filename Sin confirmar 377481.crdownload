@@ -1,0 +1,95 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jul  7 17:24:52 2022
+
+@author: user
+"""
+import re
+# función para para nmbre
+def validarnombre(palabra):
+    p='^[a-zA-Z ]+$'
+    return bool(re.search(p,palabra))
+# funcion para ingreso de números
+def validarnum(num):
+    while num.isdigit()!=True:
+        False
+        break
+    return num
+#funció para el ingreso del año de nacimiento
+def edadactual(a):
+    act=2022
+    if (act-a)>17:
+        True
+    else: 
+        False
+    return a
+
+print("Para registrar su pedido necesitamos validar sus datos por favor ingrese sus datos",end=" ")
+print( )
+#validación de nombre
+while True:
+    nombre=input("ingrese su nombre correctamente: ")
+    n=(validarnombre(nombre))
+    if n==False:
+        print ("su nombre no es correcto",end=" ")
+    else:
+        break
+#validación de # de cédula
+while True:
+    cedula=input("ingrese su numero de cedula: ")
+    i=len(cedula)
+    p=(validarnum(cedula))
+    if cedula != True:
+        if i!=10:
+            print("el número de cedula es incorrecto, vuelva a intentaro")
+        else:
+            break
+    else: 
+        break  
+#validación del correo electronico
+while True:
+    mail=input("Escriba su g-mail correctamente: ")
+    if mail.find('@')==-1:
+        if mail.find('.')==-1:
+            if (mail.find('com') or mail.find('ec') or mail.find('net') or mail.find('gob'))==-1:
+                if (mail.find('gmail') or mail.find('hotmail') or mail.find('outlook'))==-1:
+                     print("el correo no es correcto vuelva a ingresar")
+                else:
+                    break
+            else:
+                break
+        else:
+            break
+    else:
+        break
+while True:
+    direccion=input("Escriba su dirección correctamente ejemplo(versalles y santiago N17-167): ")
+    if direccion.find('-')==-1:
+        print("el correo no es correcto vuelva a ingresar")
+    else:
+        break    
+#validación de número de telfono
+while True:
+    telefono=input("ingrese su numero de teléfono: ")
+    c=len(telefono)
+    t=(validarnum(telefono))
+    if telefono != True:
+        if c<7 or c>9:
+            print("el número de telefono es incorrecto, vuelva a intentaro")
+        else:
+            break
+    else: 
+        break
+    #validación de edad
+a=int(input("ingrese su año de nacimiento: "))
+e=(edadactual(a))
+if e!=True:
+    print("Sus datos para enviar su pedido son:", end=" ")
+    print("Nombre: ",nombre,end=" ")
+    print("Cédula: ",cedula,end=" ")
+    print("Correo: ",mail,end=" ")
+    print("Dirección: ",direccion,end=" ")
+    print("Telefono: ",telefono,end=" ")
+    print("Edad: ",a,end=" ")
+else:
+    print(" Usted es menor de edad por lo tanto no puede realizar pedidos")
